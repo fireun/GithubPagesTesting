@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>炫酷荷花</title>
+</head>
+<style type="text/css">
+     body{
+         background-color: black;
+         /* margin: 0;
+         padding: 0; */
+     }
+     .lotus{
+         width: 300px;
+         height: 300px;
+         /* background-color: teal; */
+         margin: 100px auto;
+         transform: rotate(45deg);
+     }
+     .lotus > div{
+         position: absolute;
+         width: 300px;
+         height: 300px;
+         background-color:PURPLE;
+         margin-top: 10px;
+         border-radius: 0 300px 0 300px;/*原理 切形型状*/
+         transform-origin: 300px 300px;/*定点位置/核心 x y*/
+         opacity: 0.7;/*透明度 中间叠加0.7 + 0.7*/
+         transition: 20s;     
+    }
+    /*后代*/
+    .lotus:hover > div:nth-child(1){
+         transform: rotate(30deg);
+    }
+    .lotus:hover > div:nth-child(2){
+         transform: rotate(60deg);
+    }
+    .lotus:hover > div:nth-child(3){
+         transform: rotate(90deg);
+    }
+    .lotus:hover > div:nth-child(4){
+         transform: rotate(-30deg);
+    }
+    .lotus:hover > div:nth-child(5){
+         transform: rotate(-60deg);
+    }
+    .lotus:hover > div:nth-child(6){
+         transform: rotate(-90deg);
+    }
+</style>
+<body>
+    <div class="lotus">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>
+
+<!--
+
+-->
