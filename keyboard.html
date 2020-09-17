@@ -1,0 +1,125 @@
+<!--
+   为什么 用class 不用id
+   id太权重太高 优先级太高
+   id > 大过 class -先找的话就先找id
+-->
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,intial-scale=1.0">
+    <title>keyboard</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .keyboard{
+            display: grid;/*网格布局 比如table*/
+            grid-template-columns: repeat(30,30px);/*行 :（分为多少列，没列多少像素？）*/
+            grid-template-rows: repeat(5,60px);
+            grid-gap: 5px;/* 单元格间距*/
+            width: 1045px;
+            height: 320px;
+            background-color: #c5c5c5;
+            margin: 100px auto;
+            padding: 20px;
+            border-radius: 20px;
+        }
+        .key{
+            grid-column: span 2;/* 合并两个*/
+            background-color: #F3F3F3;
+            border: 2px solid #000;/*边框属性： 粗细 样式 颜色*/
+            text-align: center;/*文本属性：居中*/
+            line-height: 60px;/*行高 ： 高度 -》 垂直居中*/
+            border-radius: 5px;/* css3 圆角属性*/
+        }
+
+        .delete,
+        .ctrl,
+        .enter,
+        .shift{ /* , 并列 和*/
+            grid-column: span 4;/*4个格子变一格*/
+        }
+        .tab,
+        .command,
+        .blackslash{ /* ,  用处是 call同样css*/
+            grid-column: span 3;
+        }
+        /* .shift{
+            grid-column: span 5;
+        } */
+        .space{
+            grid-column: span 11;
+        }
+        .key:hover{
+            border-color: #fff;
+            color: #fff;
+            /*渲染颜色 上面如果border没set颜色 当这边hover set color罢了 就能渲染 =统一颜色*/
+        }
+    </style>
+</head>
+<body>
+     <div class="keyboard">
+         <div class="key">~</div>
+         <div class="key">1</div>
+         <div class="key">2</div>
+         <div class="key">3</div>
+         <div class="key">4</div>
+         <div class="key">5</div>
+         <div class="key">6</div>
+         <div class="key">7</div>
+         <div class="key">8</div>
+         <div class="key">9</div>
+         <div class="key">0</div>
+         <div class="key">-</div>
+         <div class="key">+</div>
+         <div class="key delete">Delete</div><!--css 里尽量不要大写-->
+         <div class="key tab">Tab</div>
+         <div class="key">Q</div>
+         <div class="key">W</div>
+         <div class="key">E</div>
+         <div class="key">R</div>
+         <div class="key">T</div>
+         <div class="key">Y</div>
+         <div class="key">U</div>
+         <div class="key">I</div>
+         <div class="key">O</div>
+         <div class="key">P</div>
+         <div class="key">{</div>
+         <div class="key">}</div>
+         <div class="key blackslash">\</div>
+         <div class="key ctrl">Caps Lock</div>
+         <div class="key">A</div>
+         <div class="key">S</div>
+         <div class="key">D</div>
+         <div class="key">F</div>
+         <div class="key">G</div>
+         <div class="key">H</div>
+         <div class="key">J</div>
+         <div class="key">K</div>
+         <div class="key">L</div>
+         <div class="key">:</div>
+         <div class="key">"</div>
+         <div class="key enter">Enter</div>
+         <div class="key shift">Shift</div>
+         <div class="key">Z</div>
+         <div class="key">X</div>
+         <div class="key">C</div>
+         <div class="key">V</div>
+         <div class="key">B</div>
+         <div class="key">N</div>
+         <div class="key">M</div>
+         <div class="key">,</div>
+         <div class="key">.</div>
+         <div class="key blackslash">/</div>
+         <div class="key shift">Shift</div>
+         <div class="key ctrl">Ctrl</div>
+         <div class="key">Fn</div>
+         <div class="key">Window</div>
+         <div class="key">Alt</div>
+         <div class="key space">Space</div>
+         <div class="key">Alt</div>
+         <div class="key command">Command</div>
+         <div class="key ctrl">Ctrl</div>
+
+     </div>
+</body>
