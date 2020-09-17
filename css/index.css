@@ -1,0 +1,486 @@
+/*页面逻辑，独特的样式*/
+.nav {
+    height: 30px;
+    background: #e3e4e5;
+    border-bottom:1px solid #ddd;
+}
+
+.nav-box {
+    margin: 0px auto;/*居中*/
+    width: 1190px;/*最大宽度*/
+    text-align: right;
+}
+
+.nav-box ul li { 
+    display: inline-block;
+    padding: 0px 10px;
+    font-size: 12px;
+    height: 30px;
+    line-height: 30px;
+    position: relative;
+}
+
+.nav-box ul li a {
+    color: #999999;
+    text-decoration: none;/*下边线*/
+}
+
+.nav-box ul li a span {
+    color: red;
+}
+
+.nav-box ul li:not(:first-child):not(:last-child)::after { /* 写后座分割线 :not() 去除 :last-child 最后一个标签*/
+    content: "";
+    width: 1px;
+    height: 14px;
+    background: #cccccc;
+    position: absolute;
+    top: 8px;
+    right: 0px;
+    display: block;
+}
+
+.nav-box ul li a:hover {
+    color: red;
+}
+
+.nav-box ul li:nth-child(1) {
+    float: left;
+}
+
+.header-box {
+    height: 140px;
+    background: #ffffff;
+}
+
+.header {
+    width: 1190px;
+    display: flex;
+    margin: 0px auto;
+    padding: 10px 0px;
+}
+
+.header .logo-box {
+    width: 190px;
+    height: 120px;
+}
+
+.header .search-box {
+    width: 790px;
+    padding: 0px 10px;
+}
+
+.header .search-bar {
+    padding: 15px 0px 0px 50px;
+    display: flex;
+}
+
+.search-bar input {
+    border: 3px solid #e1251b;
+    width: 500px;
+    height: 30px;
+    padding: 2px 10px;
+    outline: none;/*default时候 会改颜色，none的话就不会被改变*/
+}
+
+.search-bar .search-btn {
+    width: 50px;
+    height: 34px;
+    border: 3px solid #e1251b;
+    background: #e1251b;
+    cursor: pointer;
+    line-height: 34px;
+    text-align: center;
+}
+
+.search-bar .iconfont-search {
+    color: #ffffff; 
+    font-size: 22px; 
+    font-weight: bold;  
+}
+
+.search-bar .cart-btn {
+    margin: 0px 0px 0px 20px;
+    border: 1px solid #cccccc;
+    width: 100px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    color: #e1251b;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.search-bar .iconfont-cart {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.cart-btn:hover {
+    border: 1px solid #e1251b;
+}
+
+.header .recommend {
+    font-size: 12px;
+    padding: 5px 0px 20px 50px;
+}
+
+.header .recommend a {
+    color: #999999;
+}
+
+.header .recommend a span {
+    color: red;
+}
+.search-box ul li {
+    display: inline-block;
+    padding: 0px 10px;
+}
+
+.search-box ul li a {
+    color: #333333;
+    text-decoration: none;
+}
+
+.search-box ul li a span {
+    color: red;
+    font-weight: bold;
+}
+
+.content .wrapper {
+    margin: 0px auto;
+    width: 1190px;
+    padding: 10px;
+    display: flex;
+}
+
+.menu-box {
+    width: 190px;
+    background: #ffffff;
+    position: relative;
+    padding: 10px 0px;
+    margin-right: 10px;
+}
+
+.menu-box ul li {
+    height: 25px;
+    line-height: 25px;
+    padding: 0px 12px;
+    overflow: hidden; /* 把多出来的字藏起来/挤在一起 */
+}
+
+.menu-box ul li:hover {
+    background: #d9d9d9;
+}
+
+.menu-box ul li:hover .sub-menu {
+    display: block; /* 显示二级菜单*/
+}
+
+/* 让js去做 hover效果 176-178如果启动js就没用了*/
+.menu-box ul li .active {
+    display: block;
+}
+
+.menu-box ul li a {
+    color: #333333;
+    text-decoration: none;
+
+}
+
+.menu-box ul li a:hover {
+    color: #e1251b;
+}
+
+.menu-box .sub-menu{
+    position: absolute;
+    top: 0px;
+    left: 190px;
+    background: #ffffff;
+    z-index: 10;
+    width: 900px;
+    padding: 20px;
+    font-size: 12px;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.3);
+    display: none;
+}
+
+ .sub-menu .left-box {
+    float: left;
+    max-width: 700px;
+}
+
+.sub-menu .menu-title {
+    margin: 0px 0px 10px 0px;
+} 
+
+.sub-menu .menu-title .item {
+    display: inline-block;
+    background: #333333;
+    padding: 0px 8px;
+    margin: 0px 10px 0px 0px;
+    color: #ffffff;
+}
+
+.sub-menu .menu-title .item:hover {
+    background: #e1251b;
+}
+
+.sub-menu dl {
+    display: flex; /* give dt and dd in a line */
+}
+
+.sub-menu dt {
+    font-weight: bold;
+    width: 62px;
+    text-align: right;
+    flex-shrink: 0;/* dt 意识设置为0 不能压缩 然后dd多的话就去下一行 */
+}
+
+.sub-menu dd a {
+    padding: 4px 8px 4px 8px;
+    white-space: nowrap;/*如果有写词是一半的 会把一半的添加到下一行*/
+}
+
+.sub-menu .right-box {
+    float: right;
+    width: 168px;
+}
+
+.sub-menu .pic-box {
+    margin: 0px 0px 10px 0px;
+}
+
+.sub-menu .pic-box:last-child {
+    margin: 0px;
+}
+
+.slider-box {
+    margin-right: 10px;
+}
+
+.slider-box .slider {
+    width: 590px;
+    height: 470px;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider-box .slider ul {
+    position: absolute;
+    top: 0px;
+    left: -590px;
+    width: 500%;
+    height: 100%;
+}
+
+.slider-box .slider ul li {
+    float: left;
+}
+
+.slider-box .slider .left-box {
+    background: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 45%;  
+    left: 0px;  
+    width: 50px;
+    height: 50px;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.slider-box .slider .right-box {
+    background: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 45%;  
+    right: 0px;  
+    width: 50px;
+    height: 50px;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.slider-box .left-box, .slider-box .right-box span {
+    font-size: 24px;
+}
+
+.slider-box .index-box {
+    position: absolute;
+    bottom: 3%;
+    left: 10%;
+}
+
+.slider-box .index-box > ol {
+    height: 14px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.slider-box .index-box > ol > li {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ffffff;
+    list-style: none;
+    cursor: pointer;
+}
+
+.slider-box .index-box > ol > li.active {
+    background: #e1251b;
+}
+
+.ad-box,.info-box {
+    width:190px;
+    margin-right: 10px;
+}
+
+.ad-box .pic-box:not(:last-child) {
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+.info-box {
+    overflow: hidden;
+    height: 467px;
+    background: #fff;
+}
+
+.info-box .new-title {
+    display: block;
+    font-size: 0.83em;
+    margin-block-start: 1.67em;
+    margin-block-end: 1.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    padding-left: 15px;
+}
+
+.info-box ul {
+    position: relative;
+    margin: 0 15px;
+    height: 88px;
+}
+
+.info-box ul li {
+    padding: 3px 0;
+}
+
+.info-box ul li a {
+    color:#666;
+    text-decoration: none;
+    white-space: nowrap;
+    line-height: 16px;
+}
+
+.info-box ul span {
+    display: inline-block;
+    position: relative;
+    font-size: 12px;
+    height: 16px;
+    width: 35px;
+    line-height: 16px;
+    text-align: center;
+    vertical-align: 0;
+    color: #e1251b;
+    background-color: rgba(225,37,27,.08);
+    margin-right: 6px;
+}
+
+.wrapper .sckill-box {
+    width: 1190px;
+    background-color: white;
+    height: 260px;
+}
+
+.wrapper .sckill-box .sckill-item {
+    width: 190px;
+    height: 260px;
+}
+
+.wrapper .sckill-box .sckill-item .sckill-countdown {
+    position: relative;
+    float: left;
+    width: 190px;
+    height: 100%;
+    color: #fff;
+    background-color: #e83632;
+    background-image: url(http://misc.360buyimg.com/mtd/pc/index_2019/1.0.0/assets/img/4a15d88….png);
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat;
+}
+
+
+.wrapper .sckill-box .sckill-item .countdown-title {
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 31px;
+}
+
+.seckill-countdown .countdown-desc {
+    margin-top: 90px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.seckill-countdown .countdown-main .timmer__unit {
+    position: relative;
+    float: left;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    background-color: #2f3430;
+    margin-right: 20px;
+    color: white;
+    font-size: 20px;
+}
+
+.seckill-countdown .countdown-main .timmer__unit:after {
+    content: ":";
+    display: block;
+    position: absolute;
+    right: -20px;
+    font-weight: bolder;
+    font-size: 18px;
+    width: 20px;
+    height: 100%;
+    top: 0;
+}
+
+.timmer .timmer__unit:after {
+    content: ":";
+}
+.timmer .timmer__unit:after {
+    content: ":";
+}
+
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: red; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+    }
+
+#myBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+}

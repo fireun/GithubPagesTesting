@@ -1,0 +1,23 @@
+介绍和解释 iconfont阿里图片的使用方法-下载素材篇
+
+iconfont.css比较重要
+
+1.把file type iconfont后 .eot/.svg/.ttf/.woff/.woff2  cut起来
+2.建立新file在css folder里面
+3.粘贴那些file type 在 新folder
+5.打开iconfont.css
+6. copy 1-16行 代码 @font-face 和.iconfont
+7.paste到当前project common.css css里 
+8.更改文件路径 url
+9.全部添加当前文件夹的名字(除了data:application ...)不用更改
+
+Unicode引用 使用到代码里
+1.使用<span class="iconfont"></span> class已经写好了
+2.open iconfont.css copy 其余代码 .icon-icon-test:before和:after 进去 common.css 里
+3.打开demo_index.html
+4.copy Unicode example：&#xe63vb
+5.放进span标签里
+
+需要调icon时
+1.new class name
+2.css call name edit
